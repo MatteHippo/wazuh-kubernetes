@@ -31,7 +31,7 @@ nodes:
 ````
 Then add the docker-compose.yml file called generate-certs.yaml
 
-´´´
+```
 services:
   generator:
     image: wazuh/wazuh-certs-generator:0.0.2
@@ -41,7 +41,7 @@ services:
       - ./config/certs.yml:/config/certs.yml
     environment:
       - HTTP_PROXY=wazuh.wazuh.svc
-´´´
+```
 
 And run the command 
 
