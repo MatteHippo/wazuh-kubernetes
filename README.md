@@ -47,7 +47,7 @@ And run the command
 
 ```
 docker compose -f generate-certs.yaml run  generator
-``
+```
 
 To get the cert into the secrets run 
 
