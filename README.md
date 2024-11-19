@@ -60,4 +60,17 @@ By default there is no access to the Wazuh deployment. So you need to add your o
 
 Default login is admin/admin  (I have not set this and made it up is default )
 
+## pre
+Disk you need to have a storage ready and set as default storage class.
 
+
+
+
+## Deploy
+
+First clone this repo. We dont make any release as now ...
+then install using common helm.
+
+```
+helm upgarde --install wazuh . --namespace wazuh --create-namespace
+```
