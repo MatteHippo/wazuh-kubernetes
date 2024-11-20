@@ -20,7 +20,7 @@ spec:
     spec:   
       containers:
         - name: wazuh-dashboard
-          image: wazuh/wazuh-dashboard:4.9.1
+          image: wazuh/wazuh-dashboard:{{ .Values.wazuh.tag }}
           env:
             - name: WAZUH_API_URL
               value: "https://wazuh-manager.wazuh.svc"

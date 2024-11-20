@@ -17,8 +17,8 @@ metadata:
 spec:
   selector:
     app: wazuh-manager
+    node-type: master
   ports:
     - name: cluster
       port: 1516
       targetPort: 1516
-  clusterIP: None

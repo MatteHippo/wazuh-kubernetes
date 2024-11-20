@@ -21,7 +21,7 @@ spec:
     spec:   
       containers:
         - name: wazuh-indexer
-          image: wazuh/wazuh-indexer:4.9.1
+          image: wazuh/wazuh-indexer:{{ .Values.wazuh.tag }}
           env:
             - name: OPENSEARCH_JAVA_OPTS
               value: "-Xms1g -Xmx1g"

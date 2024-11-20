@@ -20,7 +20,7 @@ spec:
     spec:   
       containers:
         - name: wazuh-manager
-          image: wazuh/wazuh-manager:4.9.1
+          image: wazuh/wazuh-manager:{{ .Values.wazuh.tag }}
           env:
             - name: INDEXER_URL
               value: https://wazuh-indexer.wazuh.svc:9200
@@ -51,6 +51,10 @@ spec:
             - name: config
               mountPath: /wazuh-config-mount/etc/ossec.conf
               subPath: ossec.conf
+              readOnly: true
+            - name: wazuh-register-key
+              mountPath: /var/ossec/etc/authd.pass
+              subPath: authd.pass
               readOnly: true
             - name: wazuh-manager-master
               subPath: api/configuration
@@ -114,6 +118,9 @@ spec:
       - name: config
         configMap:
           name: wazuh-manager-master-conf
+      - name: wazuh-register-key
+        configMap:
+          name: wazuh-register-key
       - name: wazuh-manager
         secret:
           secretName: wazuh-manager

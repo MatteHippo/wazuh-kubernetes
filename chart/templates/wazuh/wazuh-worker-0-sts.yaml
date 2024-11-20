@@ -50,7 +50,7 @@ spec:
             claimName: wazuh-worker-filebeat
       containers:
         - name: wazuh-manager
-          image: wazuh/wazuh-manager:4.9.1
+          image: wazuh/wazuh-manager:{{ .Values.wazuh.tag }}
           env:    
             - name: INDEXER_URL
               value: https://wazuh-indexer.wazuh.svc:9200
