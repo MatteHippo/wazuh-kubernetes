@@ -1,0 +1,14 @@
+services:
+  agent:
+    build: .
+    ports: 
+      - 9000:9000
+    environment:
+      - MANAGER_URL= # Manager ip 
+      - MANAGER_PORT=1515  # should go to manager port 1515
+      - SERVER_URL= # Worker IP
+      - SERVER_PORT=1514   # should go to worker port 1514
+      - NAME=docker-agent-ready # name update need to be new so it can register
+      - GROUP=default  #The groups need to create in wazuh before you can add then
+      - ENROL_TOKEN=  # set the token to enroll 
+      
